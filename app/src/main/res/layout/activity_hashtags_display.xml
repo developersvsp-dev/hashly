@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F8F9FA">
+
+    <!-- 🔥 SINGLE STATUS BAR FIX -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="#667eea"
+        android:padding="20dp"
+        android:paddingTop="84dp"
+    android:elevation="8dp">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="🔥 TRENDING HASHTAGS"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:paddingTop="30dp"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="12dp" />  <!-- ✅ NO extra padding! -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tvTrendingHashtags"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="#parenting #mom #family"
+            android:textSize="16sp"
+            android:textColor="@android:color/white"
+            android:lineSpacingExtra="4dp"
+            android:maxLines="2"
+            android:ellipsize="end" />
+
+        <ImageButton
+            android:id="@+id/btnCopyHashtags"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:src="@drawable/ic_copy"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="Copy hashtags"
+            android:padding="8dp"
+            android:scaleType="centerInside"
+            app:tint="@android:color/white" />
+    </LinearLayout>
+</LinearLayout>
+
+    <!-- Niche Title -->
+<LinearLayout
+android:layout_width="match_parent"
+android:layout_height="wrap_content"
+android:orientation="vertical"
+android:gravity="center"
+android:background="#4a90e2"
+android:padding="16dp"
+android:layout_margin="8dp">
+
+<TextView
+    android:id="@+id/tvNiche"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="PARENTING"
+    android:textSize="18sp"
+    android:textStyle="bold"
+    android:textColor="@android:color/white" />
+</LinearLayout>
+
+    <!-- 🔥 REELS WITH SPACERS/DIVIDERS -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvHashtags"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="12dp"
+        android:clipToPadding="false"
+        android:layout_margin="8dp"
+        android:scrollbars="vertical" />
+
+    </LinearLayout>

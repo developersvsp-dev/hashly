@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "1078351862359",
+    "project_id": "hashly-ab5c1",
+    "storage_bucket": "hashly-ab5c1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1078351862359:android:3795a013d48c74aa236112",
+        "android_client_info": {
+          "package_name": "com.vaibhav.hashly"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1078351862359-t2kduoo44i96nehrrmtm8k559ik40mi6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.vaibhav.hashly",
+            "certificate_hash": "be6e65d0f7516f5a734948d81a73f8cf48242755"
+          }
+        },
+        {
+          "client_id": "1078351862359-00potkhid1uk6ldov1m5k0itmqj12a7v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASnTd8toCcYFwBxvbGdG1vyht1lTqcOL4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1078351862359-00potkhid1uk6ldov1m5k0itmqj12a7v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
