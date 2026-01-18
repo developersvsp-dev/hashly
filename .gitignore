@@ -13,3 +13,9 @@
 .externalNativeBuild
 .cxx
 local.properties
+node_modules/
+auth.json
+hashly-*.json
+hashly-*.png
+.DS_Store
+.env

@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Use AppCompat - 100% stable -->
-    <!-- Line 3: DarkActionBar → NoActionBar -->
-    <style name="Theme.Hashly" parent="Theme.AppCompat.Light.NoActionBar">
-        <item name="colorPrimary">#FFFFFF</item>
-        <item name="colorPrimaryDark">#3700B3</item>
-        <item name="colorAccent">#03DAC5</item>
+    <!-- ✅ FIXED: AppCompat → MaterialComponents -->
+    <style name="Theme.Hashly" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="colorPrimary">#FF5722</item>
+        <item name="colorPrimaryVariant">#E64A19</item>
+        <item name="colorOnPrimary">@android:color/white</item>
+        <item name="colorSecondary">#03DAC5</item>
         <item name="android:statusBarColor">#3700B3</item>
+        <!-- Material elevation overlay -->
+        <item name="android:windowLightStatusBar">false</item>
     </style>
-
 </resources>

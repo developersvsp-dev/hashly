@@ -327,16 +327,32 @@ public class HashtagsDisplayActivity extends AppCompatActivity {
 
     private String extractHashtags(ArrayList<?> hashtagsArray) {
         StringBuilder sb = new StringBuilder();
+        boolean firstTag = true;
+
         for (Object tagObj : hashtagsArray) {
             if (tagObj instanceof Map) {
                 @SuppressWarnings("unchecked")
                 Map<String, Object> tag = (Map<String, Object>) tagObj;
                 String tagName = getStringSafe(tag, "name");
-                sb.append("#").append(tagName).append(" ");
+
+                // 🔥 CHECK IF ALREADY HAS # - DON'T ADD AGAIN
+                if (!tagName.isEmpty()) {
+                    String cleanTag = tagName.startsWith("#") ? tagName : "#" + tagName;
+                    if (!firstTag) sb.append(" ");
+                    sb.append(cleanTag);
+                    firstTag = false;
+                }
             } else if (tagObj instanceof String) {
-                sb.append("#").append(tagObj).append(" ");
+                String tagName = (String) tagObj;
+                String cleanTag = tagName.startsWith("#") ? tagName : "#" + tagName;
+                if (!tagName.isEmpty()) {
+                    if (!firstTag) sb.append(" ");
+                    sb.append(cleanTag);
+                    firstTag = false;
+                }
             }
         }
-        return sb.toString().trim();
+        return sb.toString();
     }
+
 }
