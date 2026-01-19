@@ -12,20 +12,21 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInClient;
 import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.material.button.MaterialButton;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class DashboardActivity extends AppCompatActivity {
     private TextView welcomeText, userEmail;
-    private Button btnLogout, btnGetHashtags;
+    private Button btnLogout;
+    private MaterialButton btnGetHashtags, btnGetHooks;
     private GoogleSignInClient mGoogleSignInClient;
 
-    // 🔥 UPDATED: Navigate to HashtagsDisplayActivity after niche selection
+    // 🔥 Keep existing launcher for HASHTAGS only
     private ActivityResultLauncher<Intent> nicheLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
             result -> {
                 if (result.getResultCode() == RESULT_OK && result.getData() != null) {
                     String niche = result.getData().getStringExtra("niche");
-
                     // 🔥 SHOW HASHTAGS TO USER - Navigate to display screen
                     Intent hashtagsIntent = new Intent(DashboardActivity.this, HashtagsDisplayActivity.class);
                     hashtagsIntent.putExtra("niche", niche);
@@ -47,11 +48,27 @@ public class DashboardActivity extends AppCompatActivity {
         userEmail = findViewById(R.id.userEmail);
         btnLogout = findViewById(R.id.btnLogout);
         btnGetHashtags = findViewById(R.id.btnGetHashtags);
+        btnGetHooks = findViewById(R.id.btnGetHooks);
 
-        // 🔥 HASHTAGS BUTTON - Navigate to Niche Selector
+        // 🔥 HASHTAGS BUTTON - Navigate to Niche Selector (UNCHANGED)
         btnGetHashtags.setOnClickListener(v -> {
             Intent intent = new Intent(DashboardActivity.this, NicheSelectorActivity.class);
             nicheLauncher.launch(intent);
+        });
+
+        // 🔥 HOOKS BUTTON - DIRECTLY open HooksDisplayActivity (NO niche selector)
+        btnGetHooks.setOnClickListener(v -> {
+            // 🔥 Option 1: Default niche "trending" (SIMPLEST)
+            Intent hooksIntent = new Intent(DashboardActivity.this, HooksDisplayActivity.class);
+            hooksIntent.putExtra("niche", "trending");
+            startActivity(hooksIntent);
+
+            // 🔥 Option 2: Show niche selector THEN HooksDisplayActivity (if you want)
+            /*
+            Intent intent = new Intent(DashboardActivity.this, NicheSelectorActivity.class);
+            intent.putExtra("request_type", "hooks");
+            nicheLauncher.launch(intent); // But update nicheLauncher to handle hooks
+            */
         });
 
         // 🔥 LOGOUT BUTTON

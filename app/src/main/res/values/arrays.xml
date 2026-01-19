@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="niches">
+        <item>Trending</item>
+        <item>Beauty</item>
+        <item>Business</item>
+        <item>Cooking</item>
+        <item>Crypto</item>
+        <item>Education</item>
+        <item>Fashion</item>
+        <item>Finance</item>
+        <item>Fitness</item>
+    </string-array>
+</resources>

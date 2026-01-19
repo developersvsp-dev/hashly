@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#F8F9FA">
+
+    <!-- 🔥 Gradient Title -->
+    <TextView
+        android:id="@+id/hooksTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="🔥 HOOKS"
+        android:textSize="28sp"
+        android:padding="24dp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:background="#FF6B6B"
+        android:textColor="@android:color/white"/>
+
+    <!-- 🔥 FIXED DROPDOWN -->
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/dropdownNiche"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="24dp"
+        android:hint="Select Niche"
+        app:endIconMode="dropdown_menu"
+        app:boxStrokeColor="#FF5722"
+        app:hintTextColor="#FF5722">
+
+        <AutoCompleteTextView
+            android:id="@+id/autoCompleteNiche"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"
+            android:focusable="false"
+            android:completionThreshold="1" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <!-- 🔥 RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerHooks"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="16dp" />
+
+</LinearLayout>

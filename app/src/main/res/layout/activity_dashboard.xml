@@ -163,8 +163,38 @@
                     app:rippleColor="#80FFFFFF"
                     style="@style/Widget.MaterialComponents.Button"
                     android:stateListAnimator="@animator/button_elevation" />
+            </androidx.cardview.widget.CardView>
 
+            <!-- 🔥 NEW BUTTON: Get Trending Hooks -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="24dp"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="8dp">
 
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnGetHooks"
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    android:text="Get Trending Hooks"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textAllCaps="false"
+                    android:textColor="@android:color/white"
+                    android:layout_margin="16dp"
+                    app:backgroundTint="#009688"
+                    app:cornerRadius="12dp"
+                    app:elevation="8dp"
+                    app:strokeColor="#00796B"
+                    app:strokeWidth="1dp"
+                    app:icon="@drawable/ic_trending_up"
+                    app:iconTint="@android:color/white"
+                    app:iconGravity="start"
+                    app:iconPadding="12dp"
+                    app:rippleColor="#80FFFFFF"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:stateListAnimator="@animator/button_elevation" />
             </androidx.cardview.widget.CardView>
 
             <!-- 🔥 REELS PREVIEW -->
